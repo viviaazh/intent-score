@@ -89,10 +89,18 @@ public class MainActivity extends AppCompatActivity {
         String awayteam = awayteamInput.getText().toString();
 
         if(hometeamInput.length()==0){
-            hometeamInput.setError("Home team dilarang kosong");
+            hometeamInput.setError("Home team tidak boleh kosong");
         }
         else if(awayteamInput.length()==0){
-            awayteamInput.setError("Away team dilarang kosong");
+            awayteamInput.setError("Away team tidak boleh kosong");
+        }
+        else if(imageUriHome == null){
+            Toast.makeText(this, "Home image tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            handleHomeImage(view);
+        }
+        else if(imageUriAway == null){
+            Toast.makeText(this, "Away image tidak boleh kosong", Toast.LENGTH_SHORT).show();
+            handleAwayImage(view);
         }
         else{
             Intent intent = new Intent(this, MatchActivity.class);

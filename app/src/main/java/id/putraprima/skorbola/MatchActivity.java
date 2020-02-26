@@ -94,4 +94,5 @@ public class MatchActivity extends AppCompatActivity {
         intent.putExtra(HASIL_KEY, hasil);
         startActivity(intent);
     }
+
 }
